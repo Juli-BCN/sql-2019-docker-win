@@ -40,6 +40,15 @@ SQL Server Express 2019 Container for Windows - Docker App (2021)
 
 *Copy the folder 'source' (which has the installers for SQL Express 2019) into this directory*
 
-> docker build -t sql-2019-docker-win .
+> ddocker image build --tag sqlbuilder .
 
 > docker images
+
+
+
+## Run the new SQL Express 2019 container
+(Without volume created)
+> docker run --detach -it --name sqlbuilder --hostname sqlbuilder
+
+(With volume created, assuming C:\volsql directory exists)
+> docker run --detach -it --name sqlbuilder --hostname sqlbuilder --volume C:\volsql:c:\volsql sqlbuilder
