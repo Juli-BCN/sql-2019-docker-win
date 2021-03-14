@@ -51,4 +51,4 @@ SQL Server Express 2019 Container for Windows - Docker App (2021)
 > docker run --detach -it --name sqlbuilder --hostname sqlbuilder
 
 (With volume created, assuming C:\volsql directory exists)
-> docker run --detach -it --name sqlbuilder --hostname sqlbuilder --volume C:\volsql:c:\volsql sqlbuilder
+> docker run --detach -it --name sqlbuilder --hostname sqlbuilder --volume c:\volsql:c:\volsql sqlbuilder
