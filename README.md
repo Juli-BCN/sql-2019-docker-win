@@ -67,7 +67,7 @@ SQL Server Express 2019 Container for Windows - Docker App (2021)
 (With volume created, assuming C:\volsql directory exists)
 > docker run --detach -it --name sql2019 --hostname sql2019 --volume c:\volsql:c:\volsql sql2019
 
-*When creating the database, remember to put the files in path c:\volsql
+*When creating the database, remember to put the files in path c:\volsql*
 
 *Check IP where the container is running with command*
 > docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' *container_id*
@@ -91,13 +91,15 @@ Like:
 
 
 ## Run SQL Express 2019 container with IIS Web Server in two containers
-(Without volume created)
-> docker run --detach -it --name sql2019 --hostname sql2019
+*Check if you are using volumes to store the data for database and website and edit file docker-compose.yml accordingly*
 
-(With volume created, assuming C:\volsql directory exists)
-> docker run --detach -it --name sql2019 --hostname sql2019 --volume c:\volsql:c:\volsql sql2019
+(To start the two containers)
+> docker-compose up -d
 
-*When creating the database, remember to put the files in path c:\volsql
+(To stop and remove the two containers)
+> docker-compose down
 
-*Check IP where the container is running with command*
-> docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' *container_id*
+(To build a compose image)
+> docker-compose build
+
+> docker-compose images
