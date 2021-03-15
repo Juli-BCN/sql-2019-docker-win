@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+
+  sql2019:
+    image: julibcn/sqlexpress19:latest
+    hostname: sql2019
+    container_name: sql2019
+#    volumes:
+#      - c:\volsql:c:\volsql
+
+  iis2019:
+    image: julibcn/iis19:latest
+    hostname: iis2019
+    container_name: iis2019
+    depends_on:
+      - sql2019
+#    volumes:
+#      - c:\voliis:c:\voliis
